@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="number" id="edad">
+<button onclick="validarEdad()">Validar</button>
+
+<p id="resultado"></p>
+
+<script>
+function validarEdad() {
+    var edad = document.getElementById("edad").value;
+
+    if (edad == "") {
+        document.getElementById("resultado").innerHTML = "Debe ingresar una edad.";
+    } else if (edad <= 0) {
+        document.getElementById("resultado").innerHTML = "Edad invalida";
+    } else if (edad >= 18) {
+        document.getElementById("resultado").innerHTML = "Es mayor de edad";
+    } else {
+        document.getElementById("resultado").innerHTML = "Es menor de edad";
+    }
+}
+</script>
+
+</body>
+</html>

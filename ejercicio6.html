@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="nombre" placeholder="Nombre"><br>
+<input type="email" id="correo" placeholder="Correo"><br>
+<input type="password" id="clave" placeholder="Contraseña"><br>
+<input type="password" id="confirmacion" placeholder="Confirmar contraseña"><br>
+<button onclick="validarFormulario()">Registrar</button>
+
+<script>
+function validarFormulario() {
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let clave = document.getElementById("clave").value;
+    let confirmacion = document.getElementById("confirmacion").value;
+
+    if (nombre === "" || correo === "" || clave === "" || confirmacion === "") {
+        alert("Todos los campos son obligatorios");
+    } else if (!correo.includes("@")) {
+        alert("El correo debe contener @");
+    } else if (clave.length < 8) {
+        alert("La contraseña debe tener al menos 8 caracteres");
+    } else if (clave !== confirmacion) {
+        alert("Las contraseñas no coinciden");
+    } else {
+        alert("Registro realizado correctamente");
+    }
+}
+</script>
+
+</body>
+</html>
